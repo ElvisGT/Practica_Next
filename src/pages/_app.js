@@ -10,13 +10,13 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <Provider value={initialState}>
-      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-GJ8QBXBTLV" />
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-4DSCRWSDSG" />
       <Script id="google-analytics" strategy="afterInteractive">
         {`window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-          
-            gtag('config', 'G-GJ8QBXBTLV');`}
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-4DSCRWSDSG');`}
       </Script>
       <Header />
       <Component {...pageProps} />
