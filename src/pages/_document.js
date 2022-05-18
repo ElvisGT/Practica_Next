@@ -1,30 +1,19 @@
- import Document,{Html,Head,Main,NextScript} from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 
+class MyDocument extends Document {
+  render() {
+    return (
+      <Html lang="en">
+        <Head>
+          <meta charSet="utf-8" />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
+}
 
- class MyDocument extends Document{
-    render(){
-        return (
-            <Html lang="en">
-                <Head>
-                    <title>React Shop</title>
-                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GJ8QBXBTLV"></script>
-                    <script dangerouslySetInnerHTML={{
-                        __html:`window.dataLayer = window.dataLayer || [];
-                        function gtag(){dataLayer.push(arguments);}
-                        gtag('js', new Date());
-                      
-                        gtag('config', 'G-GJ8QBXBTLV');`
-                    }}/>
-                </Head>
-                <body>
-                    <Main />
-                    <NextScript />
-                    
-                </body>
-            </Html>
-
-        );
-    };
- };
-
- export default MyDocument;
+export default MyDocument;
