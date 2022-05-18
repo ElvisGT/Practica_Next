@@ -8,14 +8,10 @@ import styles from '@styles/MyOrder.module.scss';
 
 
 const MyOrder = () => {
-	const { state, toggleOrder } = useContext(AppContext);
-
-	const sumTotal = () => {
-		const reducer = (accumalator, currentValue) => accumalator + currentValue.price;
-		const sum = state.cart.reduce(reducer, 0);
-		return sum;
-	}
-
+	const { state, toggleOrder} = useContext(AppContext);
+	
+	
+	
 	return (
 		<aside className={styles.MyOrder}>
 			<div className={styles['MyOrder-container']}>
@@ -26,14 +22,16 @@ const MyOrder = () => {
 				<div className={styles['my-order-content']}>
 					<div className={styles['my-orders']}>
 						{state.cart.map((product) => (
+							<>
 							<OrderItem product={product} key={`orderItem-${product.id}`} />
+							</>
 						))}
 					</div>
 					<div className={styles.order}>
 						<p>
 							<span>Total</span>
 						</p>
-						<p>${sumTotal()}</p>
+						<p>${state.sumTotal}</p>
 					</div>
 					<Link className={styles['primary-button']} href="/checkout">
 						Checkout

@@ -8,7 +8,8 @@
   position: fixed;
   top: 0;
   background: white;
-  width: calc(100% - 50px);
+  width: calc(100% - 0px);
+  z-index: 1;
 }
 .menu {
   display: none;
@@ -25,6 +26,10 @@
   align-items: center;
   height: 60px;
 }
+.navbar-right li:first-of-type {
+  margin:0 10px 0 0;
+}
+
 .navbar-left {
   display: flex;
 }
